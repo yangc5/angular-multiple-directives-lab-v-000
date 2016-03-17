@@ -10,8 +10,19 @@ function ContactController() {
         phone: '0684059433'
     }];
 
+    var vm = this;
     this.removeContact = function (index) {
         this.contacts.splice(index, 1);
+    }
+
+    this.addContact = function(){
+      this.contacts.push({
+        name: vm.name,
+        phone: vm.phoneNumber
+      });
+      
+      vm.name = '';
+      vm.phoneNumber = '';
     }
 }
 
